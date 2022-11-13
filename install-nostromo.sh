@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/zsh
 #
 # This script should be run via curl:
 #   sh -c "$(curl -fsSL https://raw.github.com/rainsphere-ai/rs-onboarding-scripts/main/install-nostromo.sh)"
@@ -276,12 +276,11 @@ setup_nostromo() {
     exit 1
   }
 
+  fmt_info "Initializing nostromo..."
   nostromo init || {
     fmt_error "nostromo initialization failed"
     exit 1
   }
-
-  source ~/.zprofile && source ~/.zshrc
 
   ostype=$(uname)
   if [ -z "${ostype%CYGWIN*}" ] && git --version | grep -Eq 'msysgit|windows'; then
@@ -299,8 +298,6 @@ setup_dev() {
     fmt_error "nostromo docking failed"
     exit 1
   }
-
-  source ~/.zprofile && source ~/.zshrc
 
   fmt_info "Installing dev env..."
   dev setup env || {
