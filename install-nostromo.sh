@@ -282,6 +282,26 @@ setup_nostromo() {
   echo
 }
 
+setup_dev() {
+  fmt_info "Docking nostromo manifests..."
+  nostromo dock https://storage.googleapis.com/rs-nostromo-configs/dev.yaml || {
+    fmt_error "nostromo docking failed"
+    exit 1
+  }
+
+  fmt_info "Installing dev env..."
+  dev setup env || {
+    fmt_error "dev env installation failed"
+    exit 1
+  }
+
+  fmt_info "Installing dev tools..."
+  dev setup tools || {
+    fmt_error "dev tools installation failed"
+    exit 1
+  }
+}
+
 setup_shell() {
   # Skip setup if the user wants or stdin is closed (not running interactively).
   if [ "$CHSH" = no ]; then
@@ -412,6 +432,7 @@ main() {
   fi
 
   setup_nostromo
+  setup_dev
   setup_shell
 
   print_success
