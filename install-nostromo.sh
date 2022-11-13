@@ -300,6 +300,8 @@ setup_dev() {
     exit 1
   }
 
+  source ~/.zprofile && source ~/.zshrc
+
   fmt_info "Installing dev env..."
   dev setup env || {
     fmt_error "dev env installation failed"
