@@ -265,10 +265,10 @@ setup_nostromo() {
       fmt_error "homebrew installation failed"
       exit 1
     }
-  }
 
-  # Reload shell
-  exec zsh -l
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  }
 
   fmt_info "Installing nostromo..."
   brew install pokanop/pokanop/nostromo || {
