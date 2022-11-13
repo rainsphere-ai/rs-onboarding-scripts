@@ -48,7 +48,6 @@ CHSH=${CHSH:-yes}
 RUNZSH=${RUNZSH:-yes}
 KEEP_ZSHRC=${KEEP_ZSHRC:-no}
 
-
 command_exists() {
   command -v "$@" >/dev/null 2>&1
 }
@@ -265,6 +264,9 @@ setup_nostromo() {
       exit 1
     }
   }
+
+  # Reload shell
+  exec zsh -l
 
   fmt_info "Installing nostromo..."
   brew install pokanop/pokanop/nostromo || {
