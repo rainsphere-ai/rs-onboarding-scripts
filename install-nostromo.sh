@@ -299,7 +299,7 @@ setup_dev() {
     exit 1
   }
 
-  exec zsh -l
+  source ~/.zshrc
 
   fmt_info "Installing dev env..."
   dev setup env || {
