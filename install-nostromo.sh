@@ -276,6 +276,11 @@ setup_nostromo() {
     exit 1
   }
 
+  nostromo init || {
+    fmt_error "nostromo initialization failed"
+    exit 1
+  }
+
   ostype=$(uname)
   if [ -z "${ostype%CYGWIN*}" ] && git --version | grep -Eq 'msysgit|windows'; then
     fmt_error "Windows/MSYS Git is not supported on Cygwin"
