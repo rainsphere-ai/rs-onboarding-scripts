@@ -261,7 +261,7 @@ setup_nostromo() {
 
   command_exists brew || {
     fmt_info "Installing Homebrew..."
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || {
       fmt_error "homebrew installation failed"
       exit 1
     }
