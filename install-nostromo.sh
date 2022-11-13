@@ -276,6 +276,11 @@ setup_nostromo() {
     exit 1
   }
 
+  command_exists nostromo || {
+    fmt_error "nostromo installation failed"
+    exit 1
+  }
+
   nostromo init || {
     fmt_error "nostromo initialization failed"
     exit 1
