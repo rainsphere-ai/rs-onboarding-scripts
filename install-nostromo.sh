@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 #
 # This script should be run via curl:
 #   sh -c "$(curl -fsSL https://raw.github.com/rainsphere-ai/rs-onboarding-scripts/main/install-nostromo.sh)"
@@ -299,7 +299,7 @@ setup_dev() {
     exit 1
   }
 
-  source <(nostromo completion zsh)
+  exec /bin/zsh
 
   fmt_info "Installing dev env..."
   dev setup env || {
