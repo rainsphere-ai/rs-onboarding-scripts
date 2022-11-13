@@ -252,6 +252,8 @@ setup_nostromo() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
+  touch ~/.zshrc
+
   command_exists nostromo && {
     fmt_info "nostromo already exists, have a nice day!"
     exit 1
