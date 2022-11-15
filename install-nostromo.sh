@@ -294,7 +294,7 @@ setup_nostromo() {
 
 setup_dev() {
   fmt_info "Docking nostromo manifests..."
-  nostromo dock https://storage.googleapis.com/rs-nostromo-configs/dev.yaml || {
+  nostromo dock ./dev.yaml || {
     fmt_error "nostromo docking failed"
     exit 1
   }
