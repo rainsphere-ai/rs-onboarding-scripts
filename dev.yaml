@@ -1,6 +1,5 @@
 name: dev
-source: https://storage.googleapis.com/rs-nostromo-configs/dev.yaml
-path: /Users/saheljalal/.nostromo/ships/dev.yaml
+source: https://raw.github.com/rainsphere-ai/rs-onboarding-scripts/main/dev.yaml
 version:
   uuid: f6f1dbf4-4d13-43c7-b822-c7cf5b48cb3e
   semver: 0.11.4
