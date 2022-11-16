@@ -1,0 +1,1282 @@
+name: dev
+source: https://storage.googleapis.com/rs-nostromo-configs/dev.yaml
+path: /Users/saheljalal/.nostromo/ships/dev.yaml
+version:
+  uuid: f6f1dbf4-4d13-43c7-b822-c7cf5b48cb3e
+  semver: 0.11.4
+  gitcommit: 8f400a9b1780e64edbb1013b19fcfe0a7c77b542
+  builddate: "2022-06-02T00:34:36Z"
+config:
+  verbose: false
+  aliasesonly: false
+  mode: 0
+  backupcount: 10
+commands:
+  cat:
+    keypath: cat
+    name: bat
+    alias: cat
+    aliasonly: false
+    description: Use bat instead of cat
+    commands: {}
+    subs: {}
+    code:
+      language: ""
+      snippet: ""
+    mode: 0
+    disabled: false
+  dev:
+    keypath: dev
+    name: |
+      GREEN='\033[0;32m';
+      RED='\033[0;31m';
+      YELLOW='\033[0;33m';
+      BLUE='\033[0;34m';
+      PURPLE='\033[0;35m';
+      CYAN='\033[0;36m';
+      RESET='\033[0m';
+    alias: dev
+    aliasonly: false
+    description: One command to rule them all
+    commands:
+      edit:
+        keypath: dev.edit
+        name: ""
+        alias: edit
+        aliasonly: false
+        description: Edit files on system using default editor
+        commands:
+          bash:
+            keypath: dev.edit.bash
+            name: vim ~/.bashrc
+            alias: bash
+            aliasonly: false
+            description: Edit bashrc config file using vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          bash_profile:
+            keypath: dev.edit.bash_profile
+            name: vim ~/.bash_profile
+            alias: bash_profile
+            aliasonly: false
+            description: Edit bash_profile config file using vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          nostromo:
+            keypath: dev.edit.nostromo
+            name: vim ~/.nostromo/ships/manifest.yaml
+            alias: nostromo
+            aliasonly: false
+            description: Edit nostromo manifest file using vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          p10k:
+            keypath: dev.edit.p10k
+            name: vim ~/.p10k.zsh
+            alias: p10k
+            aliasonly: false
+            description: Edit p10k config file in vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          profile:
+            keypath: dev.edit.profile
+            name: vim ~/.profile
+            alias: profile
+            aliasonly: false
+            description: Edit profile config file using vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          ssh:
+            keypath: dev.edit.ssh
+            name: vim ~/.ssh/config
+            alias: ssh
+            aliasonly: false
+            description: Edit ssh config file in vim
+            commands:
+              hosts:
+                keypath: dev.edit.ssh.hosts
+                name: vim ~/.ssh/hosts
+                alias: hosts
+                aliasonly: false
+                description: Edit ssh hosts file in vim
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 2
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          terminalizer:
+            keypath: dev.edit.terminalizer
+            name: vim ~/.terminalizer/config.yml
+            alias: terminalizer
+            aliasonly: false
+            description: Edit terminalizer config file
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          zsh:
+            keypath: dev.edit.zsh
+            name: vim ~/.zshrc
+            alias: zsh
+            aliasonly: false
+            description: Edit zsh config file using vim
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      infra:
+        keypath: dev.infra
+        name: ""
+        alias: infra
+        aliasonly: false
+        description: Infra team commands
+        commands:
+          clone:
+            keypath: dev.infra.clone
+            name: 'git clone '
+            alias: clone
+            aliasonly: false
+            description: Clone a repo
+            commands:
+              courier:
+                keypath: dev.infra.clone.courier
+                name: git@github.com:rainsphere-ai/rs-courier-svc.git
+                alias: courier
+                aliasonly: false
+                description: Courier service handling sms/email
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              identity:
+                keypath: dev.infra.clone.identity
+                name: git@github.com:rainsphere-ai/rs-identity-svc.git
+                alias: identity
+                aliasonly: false
+                description: Identity service for managing identities
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              orchestration:
+                keypath: dev.infra.clone.orchestration
+                name: git@github.com:rainsphere-ai/rs-orchestration-svc.git
+                alias: orchestration
+                aliasonly: false
+                description: Orchestration service for managing tenants
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      install:
+        keypath: dev.install
+        name: echo -ne installing $2... &&
+        alias: install
+        aliasonly: false
+        description: Install various tools and software
+        commands:
+          asciinema:
+            keypath: dev.install.asciinema
+            name: dev install run-ch "asciinema" "brew install asciinema"
+            alias: asciinema
+            aliasonly: false
+            description: Install asciinema
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          bat:
+            keypath: dev.install.bat
+            name: dev install run-ch "bat" "brew install bat"
+            alias: bat
+            aliasonly: false
+            description: Install bat
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          brew:
+            keypath: dev.install.brew
+            name: dev install run-ch "brew" '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+            alias: brew
+            aliasonly: false
+            description: Install Homebrew
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          check:
+            keypath: dev.install.check
+            name: which $1 &> /dev/null && echo $1 exists || (echo $1 not found &&
+              exit 1)
+            alias: check
+            aliasonly: false
+            description: Check if a command or tool is installed
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 2
+            disabled: false
+          exists:
+            keypath: dev.install.exists
+            name: '[ -f $1 ] || [ -d $1 ] && echo $1 exists || (echo $1 not found
+              && exit 1)'
+            alias: exists
+            aliasonly: false
+            description: Check if a file or folder exists
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 2
+            disabled: false
+          fd:
+            keypath: dev.install.fd
+            name: dev install run-ch "fd" "brew install fd"
+            alias: fd
+            aliasonly: false
+            description: Install fd
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          fzf:
+            keypath: dev.install.fzf
+            name: dev install run-ch "fzf" "brew install fzf"
+            alias: fzf
+            aliasonly: false
+            description: Install fzf
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          go:
+            keypath: dev.install.go
+            name: dev install run-ch "go" "brew install go"
+            alias: go
+            aliasonly: false
+            description: Install go
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          htmlq:
+            keypath: dev.install.htmlq
+            name: dev install run-ch "htmlq" "brew install htmlq"
+            alias: htmlq
+            aliasonly: false
+            description: Install htmlq
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          httpie:
+            keypath: dev.install.httpie
+            name: dev install run-ch "httpie" "brew install httpie"
+            alias: httpie
+            aliasonly: false
+            description: Install httpie
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          is-up-cli:
+            keypath: dev.install.is-up-cli
+            name: dev install run-ch "is-up" "npm i -g is-up-cli"
+            alias: is-up-cli
+            aliasonly: false
+            description: Install is-up-cli
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          iterm:
+            keypath: dev.install.iterm
+            name: dev install run-ex "/Applications/iTerm.app" "curl --silent https://iterm2.com/downloads.html
+              | htmlq --attribute href a | grep stable | head -n 1"
+            alias: iterm
+            aliasonly: false
+            description: Install iTerm2
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          jq:
+            keypath: dev.install.jq
+            name: dev install run-ch "jq" "brew install jq"
+            alias: jq
+            aliasonly: false
+            description: Install jq
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          kubectl:
+            keypath: dev.install.kubectl
+            name: dev install run-ch "kubectl" "brew install kubectl"
+            alias: kubectl
+            aliasonly: false
+            description: Install kubectl
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          kubetail:
+            keypath: dev.install.kubetail
+            name: dev install run-ch "kubetail" "brew install johanhaleby/kubetail/kubetail"
+            alias: kubetail
+            aliasonly: false
+            description: Install kubetail
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          lynx:
+            keypath: dev.install.lynx
+            name: dev install run-ch "lynx" "brew install lynx"
+            alias: lynx
+            aliasonly: false
+            description: Install lynx
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          mas:
+            keypath: dev.install.mas
+            name: dev install run-ch "mas" "brew install mas"
+            alias: mas
+            aliasonly: false
+            description: Install mas
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          nvm:
+            keypath: dev.install.nvm
+            name: dev install run-ch "nvm" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+              | bash"
+            alias: nvm
+            aliasonly: false
+            description: Install nvm
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          ohmyzsh:
+            keypath: dev.install.ohmyzsh
+            name: dev install run-ex "~/.oh-my-zsh" 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+            alias: ohmyzsh
+            aliasonly: false
+            description: Install ohmyzsh
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          p10k:
+            keypath: dev.install.p10k
+            name: dev install run-ex "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+              "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+            alias: p10k
+            aliasonly: false
+            description: Install powerlevel10k
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          pgcli:
+            keypath: dev.install.pgcli
+            name: dev install run-ch "pgcli" "brew install dbcli/tap/pgcli"
+            alias: pgcli
+            aliasonly: false
+            description: Install pgcli
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          pyenv:
+            keypath: dev.install.pyenv
+            name: dev install run-ch "pyenv" "brew install pyenv"
+            alias: pyenv
+            aliasonly: false
+            description: Install pyenv
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          rbenv:
+            keypath: dev.install.rbenv
+            name: dev install run-ch "rbenv" 'brew install rbenv && eval "$(rbenv
+              init -)"'
+            alias: rbenv
+            aliasonly: false
+            description: Install rbenv
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          run:
+            keypath: dev.install.run
+            name: $1 &> /dev/null && echo -e ${GREEN}ok${RESET} || echo -e ${RED}failed${RESET}
+            alias: run
+            aliasonly: false
+            description: Runner for installing software
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 2
+            disabled: false
+          run-ch:
+            keypath: dev.install.run-ch
+            name: dev install check "$1" &> /dev/null && echo -e ${GREEN}exists${RESET}
+              || (dev install run "$2")
+            alias: run-ch
+            aliasonly: false
+            description: Runner for installing software (cmd check)
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 2
+            disabled: false
+          run-ex:
+            keypath: dev.install.run-ex
+            name: dev install exists "$1" &> /dev/null && echo -e ${GREEN}exists${RESET}
+              || (dev install run "$2")
+            alias: run-ex
+            aliasonly: false
+            description: Runner for installing software (dest exists)
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 2
+            disabled: false
+          rust:
+            keypath: dev.install.rust
+            name: dev install run-ch "rustup" 'curl --proto "=https" --tlsv1.2 -sSf
+              https://sh.rustup.rs | sh'
+            alias: rust
+            aliasonly: false
+            description: Install Rust
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          starship:
+            keypath: dev.install.starship
+            name: dev install run-ch "starship" 'sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+              && eval "$(starship init zsh)"'
+            alias: starship
+            aliasonly: false
+            description: Install starship
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          terminalizer:
+            keypath: dev.install.terminalizer
+            name: dev install "terminalizer" "npm install -g terminalizer"
+            alias: terminalizer
+            aliasonly: false
+            description: Install terminalizer
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          tldr:
+            keypath: dev.install.tldr
+            name: dev install run-ch "tldr" "npm i -g tldr"
+            alias: tldr
+            aliasonly: false
+            description: Install tldr
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          tree:
+            keypath: dev.install.tree
+            name: dev install "tree" "brew install tree"
+            alias: tree
+            aliasonly: false
+            description: Install tree
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          vscode:
+            keypath: dev.install.vscode
+            name: dev install "tree" "brew install tree"
+            alias: tree
+            aliasonly: false
+            description: Install tree
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          zsh-autosuggestions:
+            keypath: dev.install.zsh-autosuggestions
+            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+              "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+            alias: zsh-autosuggestions
+            aliasonly: false
+            description: Install zsh-autosuggestions
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          zsh-syntax-highlighting:
+            keypath: dev.install.zsh-syntax-highlighting
+            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+              "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+              ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+            alias: zsh-syntax-highlighting
+            aliasonly: false
+            description: Install zsh-syntax-highlighting
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      keys:
+        keypath: dev.keys
+        name: ""
+        alias: keys
+        aliasonly: false
+        description: Manage private keys for rainsphere
+        commands:
+          copy:
+            keypath: dev.keys.copy
+            name: ""
+            alias: copy
+            aliasonly: false
+            description: Copy a service account key to pasteboard
+            commands:
+              coretech:
+                keypath: dev.keys.copy.coretech
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-ct-sa-key.json | pbcopy
+                alias: coretech
+                aliasonly: false
+                description: Copy coretech service account key to pasteboard
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              devsphere:
+                keypath: dev.keys.copy.devsphere
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-devsphere-sa-key.json
+                  | pbcopy
+                alias: devsphere
+                aliasonly: false
+                description: Copy devsphere service account key to pasteboard
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              github:
+                keypath: dev.keys.copy.github
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-gh-sa-key.json | pbcopy
+                alias: github
+                aliasonly: false
+                description: Copy GitHub service account key to pasteboard
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              tf:
+                keypath: dev.keys.copy.tf
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-tf-sa-key.json | pbcopy
+                alias: tf
+                aliasonly: false
+                description: Copy Terraform service account key to pasteboard
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              tls:
+                keypath: dev.keys.copy.tls
+                name: ""
+                alias: tls
+                aliasonly: false
+                description: Copy TLS keys to pasteboard
+                commands:
+                  cert:
+                    keypath: dev.keys.copy.tls.cert
+                    name: cat $RAINSPHERE_HOME/private-keys/tls.crt | pbcopy
+                    alias: cert
+                    aliasonly: false
+                    description: Copy TLS cert to pasteboard
+                    commands: {}
+                    subs: {}
+                    code:
+                      language: ""
+                      snippet: ""
+                    mode: 0
+                    disabled: false
+                  key:
+                    keypath: dev.keys.copy.tls.key
+                    name: cat $RAINSPHERE_HOME/private-keys/tls.key | pbcopy
+                    alias: key
+                    aliasonly: false
+                    description: Copy TLS key to pasteboard
+                    commands: {}
+                    subs: {}
+                    code:
+                      language: ""
+                      snippet: ""
+                    mode: 0
+                    disabled: false
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              vercel:
+                keypath: dev.keys.copy.vercel
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-vercel-sa-key.json | pbcopy
+                alias: vercel
+                aliasonly: false
+                description: Copy Vercel service account key to pasteboard
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          create:
+            keypath: dev.keys.create
+            name: echo implement this command
+            alias: create
+            aliasonly: false
+            description: Create a new service account key
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          show:
+            keypath: dev.keys.show
+            name: ""
+            alias: show
+            aliasonly: false
+            description: Show a service account key on console
+            commands:
+              coretech:
+                keypath: dev.keys.show.coretech
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-ct-sa-key.json
+                alias: coretech
+                aliasonly: false
+                description: Show coretech service account key on console
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              devsphere:
+                keypath: dev.keys.show.devsphere
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-devsphere-sa-key.json
+                alias: devsphere
+                aliasonly: false
+                description: Show devsphere service account key on console
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              github:
+                keypath: dev.keys.show.github
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-gh-sa-key.json
+                alias: github
+                aliasonly: false
+                description: Show GitHub service account key on console
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              tf:
+                keypath: dev.keys.show.tf
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-tf-sa-key.json
+                alias: tf
+                aliasonly: false
+                description: Show Terraform service account key on console
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              tls:
+                keypath: dev.keys.show.tls
+                name: ""
+                alias: tls
+                aliasonly: false
+                description: Show TLS keys on console
+                commands:
+                  cert:
+                    keypath: dev.keys.show.tls.cert
+                    name: cat $RAINSPHERE_HOME/private-keys/tls.crt
+                    alias: cert
+                    aliasonly: false
+                    description: Show TLS cert on console
+                    commands: {}
+                    subs: {}
+                    code:
+                      language: ""
+                      snippet: ""
+                    mode: 0
+                    disabled: false
+                  key:
+                    keypath: dev.keys.show.tls.key
+                    name: cat $RAINSPHERE_HOME/private-keys/tls.key
+                    alias: key
+                    aliasonly: false
+                    description: Show TLS key on console
+                    commands: {}
+                    subs: {}
+                    code:
+                      language: ""
+                      snippet: ""
+                    mode: 0
+                    disabled: false
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              vercel:
+                keypath: dev.keys.show.vercel
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-vercel-sa-key.json
+                alias: vercel
+                aliasonly: false
+                description: Show Vercel service account key on console
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          sync:
+            keypath: dev.keys.sync
+            name: echo implement this command
+            alias: sync
+            aliasonly: false
+            description: Sync service account keys from remote source
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      mobile:
+        keypath: dev.mobile
+        name: ""
+        alias: mobile
+        aliasonly: false
+        description: Mobile team commands
+        commands:
+          clone:
+            keypath: dev.mobile.clone
+            name: 'git clone '
+            alias: clone
+            aliasonly: false
+            description: Clone a repo
+            commands:
+              demo-ios:
+                keypath: dev.mobile.clone.demo-ios
+                name: git@github.com:rainsphere-ai/rs-demo-ios.git
+                alias: demo-ios
+                aliasonly: false
+                description: Demo iOS application
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              networking-ios:
+                keypath: dev.mobile.clone.networking-ios
+                name: git@github.com:rainsphere-ai/rs-networking-ios.git
+                alias: networking-ios
+                aliasonly: false
+                description: iOS networking library
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              podspecs-ios:
+                keypath: dev.mobile.clone.podspecs-ios
+                name: git@github.com:rainsphere-ai/rs-podspecs-ios.git
+                alias: podspecs-ios
+                aliasonly: false
+                description: iOS podspecs repo
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      platform:
+        keypath: dev.platform
+        name: ""
+        alias: platform
+        aliasonly: false
+        description: Platform team commands
+        commands:
+          clone:
+            keypath: dev.platform.clone
+            name: 'git clone '
+            alias: clone
+            aliasonly: false
+            description: Clone a repo
+            commands:
+              cdk:
+                keypath: dev.platform.clone.cdk
+                name: git@github.com:rainsphere-ai/rs-cdk-go.git
+                alias: cdk
+                aliasonly: false
+                description: Cloud SDK for go services
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              core:
+                keypath: dev.platform.clone.core
+                name: git@github.com:rainsphere-ai/rs-core-go.git
+                alias: core
+                aliasonly: false
+                description: Core packages for go services
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      setup:
+        keypath: dev.setup
+        name: ""
+        alias: setup
+        aliasonly: false
+        description: Set up scripts for rainsphere
+        commands:
+          env:
+            keypath: dev.setup.env
+            name: echo setting up dev env
+            alias: env
+            aliasonly: false
+            description: Set up dev environment for rainsphere
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          tools:
+            keypath: dev.setup.tools
+            name: |
+              echo dev tools setup ${BLUE}starting${RESET};
+              echo -------------------------------;echo "(may take a long time)\n";
+              [[ $SHELL == /bin/zsh ]] && echo "zsh is already default shell" || chsh -s $(which zsh) &> /dev/null && echo "zsh set as default shell";
+              dev install brew;
+              dev install nvm;
+              local node_version=v14;
+              local ruby_version=2.7.6;
+              echo -ne installing node $node_version... && nvm install $node_version.18.0 &> /dev/null && echo -e ${GREEN}done${RESET} || echo -e ${RED}failed${RESET};
+              nvm alias default $node_version &> /dev/null && nvm use $node_version &> /dev/null && echo "node $node_version set as default";
+              dev install rbenv;
+              eval "$(rbenv init -)" &> /dev/null && echo "rbenv initialized";
+              echo -ne installing ruby $ruby_version... && rbenv install $ruby_version -s &> /dev/null && echo -e ${GREEN}done${RESET} || echo -e ${RED}failed${RESET};
+              rbenv global $ruby_version &> /dev/null && echo "ruby $ruby_version set as default";
+              dev install go;
+              dev install htmlq;
+              dev install jq;
+              dev install bat;
+              dev install kubectl;
+              dev install kubetail;
+              dev install iterm;
+              dev install ohmyzsh;
+              dev install p10k;
+              dev install zsh-autosuggestions;
+              dev install zsh-syntax-highlighting;
+              echo "\n-------------------------------";echo dev tools setup ${BLUE}complete${RESET};
+            alias: tools
+            aliasonly: false
+            description: Set up dev tools for rainsphere
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      tools:
+        keypath: dev.tools
+        name: ""
+        alias: tools
+        aliasonly: false
+        description: Tools team commands
+        commands:
+          clone:
+            keypath: dev.tools.clone
+            name: 'git clone '
+            alias: clone
+            aliasonly: false
+            description: Clone a repo
+            commands:
+              devsphere:
+                keypath: dev.tools.clone.devsphere
+                name: git@github.com:rainsphere-ai/rs-devsphere-web.git
+                alias: devsphere
+                aliasonly: false
+                description: devsphere internal developer portal
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              nostromo:
+                keypath: dev.tools.clone.nostromo
+                name: git@github.com:pokanop/nostromo.git
+                alias: nostromo
+                aliasonly: false
+                description: nostromo cli tool
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+      web:
+        keypath: dev.web
+        name: ""
+        alias: web
+        aliasonly: false
+        description: Web team commands
+        commands:
+          clone:
+            keypath: dev.web.clone
+            name: 'git clone '
+            alias: clone
+            aliasonly: false
+            description: Clone a repo
+            commands:
+              components:
+                keypath: dev.web.clone.components
+                name: git@github.com:rainsphere-ai/rs-components-web.git
+                alias: components
+                aliasonly: false
+                description: React components library for web apps
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              main:
+                keypath: dev.web.clone.main
+                name: git@github.com:rainsphere-ai/rs-main-web.git
+                alias: main
+                aliasonly: false
+                description: Main web app for rainsphere.ai
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+              strapi:
+                keypath: dev.web.clone.strapi
+                name: git@github.com:rainsphere-ai/rs-strapi-web.git
+                alias: strapi
+                aliasonly: false
+                description: Strapi web app CMS project
+                commands: {}
+                subs: {}
+                code:
+                  language: ""
+                  snippet: ""
+                mode: 0
+                disabled: false
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+        subs: {}
+        code:
+          language: ""
+          snippet: ""
+        mode: 0
+        disabled: false
+    subs: {}
+    code:
+      language: ""
+      snippet: ""
+    mode: 0
+    disabled: false
