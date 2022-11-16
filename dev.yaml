@@ -357,6 +357,35 @@ commands:
               snippet: ""
             mode: 0
             disabled: false
+          google-chrome:
+            keypath: dev.install.google-chrome
+            name: dev install run-ex "/Applications/Google\ Chrome.app" "brew install --cask google-chrome"
+            alias: google-chrome
+            aliasonly: false
+            description: Install Google Chrome
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          google-cloud-sdk:
+            keypath: dev.install.google-cloud-sdk
+            name: |
+              dev install run-ex "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/gcloud" 
+              "brew install --cask google-cloud-sdk; gcloud components install gke-gcloud-auth-plugin; gcloud container clusters get-credentials gke --region us-central1 --project rainsphere-core-tech";
+              echo "\nsource /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc\nsource /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" >> ~/.zshrc
+            alias: google-cloud-sdk
+            aliasonly: false
+            description: Install Google Cloud SDK
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
           htmlq:
             keypath: dev.install.htmlq
             name: dev install run-ch "htmlq" "brew install htmlq"
@@ -526,6 +555,19 @@ commands:
               snippet: ""
             mode: 0
             disabled: false
+          postman:
+            keypath: dev.install.postman
+            name: dev install run-ex "/Applications/Postman.app" "brew install --cask postman"
+            alias: slack
+            aliasonly: false
+            description: Install Postman
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
           pyenv:
             keypath: dev.install.pyenv
             name: dev install run-ch "pyenv" "brew install pyenv"
@@ -604,6 +646,19 @@ commands:
               snippet: ""
             mode: 0
             disabled: false
+          slack:
+            keypath: dev.install.slack
+            name: dev install run-ex "/Applications/Slack.app" "brew install --cask slack"
+            alias: slack
+            aliasonly: false
+            description: Install Slack
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
           starship:
             keypath: dev.install.starship
             name: dev install run-ch "starship" 'sh -c "$(curl -fsSL https://starship.rs/install.sh)" && eval "$(starship init zsh)"'
@@ -623,6 +678,19 @@ commands:
             alias: terminalizer
             aliasonly: false
             description: Install terminalizer
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
+          terraform:
+            keypath: dev.install.terraform
+            name: dev install run-ex "/opt/homebrew/bin/terraform" "brew tap hashicorp/tap; brew install hashicorp/tap/terraform; terraform -install-autocomplete";
+            alias: terraform
+            aliasonly: false
+            description: Install Terraform
             commands: {}
             subs: {}
             code:
@@ -1138,6 +1206,10 @@ commands:
               dev install p10k;
               dev install zsh-autosuggestions;
               dev install zsh-syntax-highlighting;
+              dev install google-chrome;
+              dev install google-cloud-sdk;
+              dev install postman;
+              dev install slack;
               echo "\n-------------------------------";echo dev tools setup ${BLUE}complete${RESET};
             alias: tools
             aliasonly: false
