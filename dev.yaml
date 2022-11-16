@@ -294,8 +294,7 @@ commands:
             disabled: false
           check:
             keypath: dev.install.check
-            name: which $1 &> /dev/null && echo $1 exists || (echo $1 not found &&
-              exit 1)
+            name: which $1 &> /dev/null && echo $1 exists || (echo $1 not found && exit 1)
             alias: check
             aliasonly: false
             description: Check if a command or tool is installed
@@ -308,8 +307,7 @@ commands:
             disabled: false
           exists:
             keypath: dev.install.exists
-            name: '[ -f $1 ] || [ -d $1 ] && echo $1 exists || (echo $1 not found
-              && exit 1)'
+            name: '[ -f $1 ] || [ -d $1 ] && echo $1 exists || (echo $1 not found && exit 1)'
             alias: exists
             aliasonly: false
             description: Check if a file or folder exists
@@ -400,8 +398,7 @@ commands:
             disabled: false
           iterm:
             keypath: dev.install.iterm
-            name: dev install run-ex "/Applications/iTerm.app" "curl --silent https://iterm2.com/downloads.html
-              | htmlq --attribute href a | grep stable | head -n 1"
+            name: dev install run-ex "/Applications/iTerm.app" "curl --silent https://iterm2.com/downloads.html | htmlq --attribute href a | grep stable | head -n 1"
             alias: iterm
             aliasonly: false
             description: Install iTerm2
@@ -479,8 +476,7 @@ commands:
             disabled: false
           nvm:
             keypath: dev.install.nvm
-            name: dev install run-ch "nvm" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
-              | bash"
+            name: dev install run-ch "nvm" "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash"
             alias: nvm
             aliasonly: false
             description: Install nvm
@@ -506,8 +502,7 @@ commands:
             disabled: false
           p10k:
             keypath: dev.install.p10k
-            name: dev install run-ex "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-              "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+            name: dev install run-ex "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
             alias: p10k
             aliasonly: false
             description: Install powerlevel10k
@@ -546,8 +541,7 @@ commands:
             disabled: false
           rbenv:
             keypath: dev.install.rbenv
-            name: dev install run-ch "rbenv" 'brew install rbenv && eval "$(rbenv
-              init -)"'
+            name: dev install run-ch "rbenv" 'brew install rbenv && eval "$(rbenv init -)"'
             alias: rbenv
             aliasonly: false
             description: Install rbenv
@@ -573,8 +567,7 @@ commands:
             disabled: false
           run-ch:
             keypath: dev.install.run-ch
-            name: dev install check "$1" &> /dev/null && echo -e ${GREEN}exists${RESET}
-              || (dev install run "$2")
+            name: dev install check "$1" &> /dev/null && echo -e ${GREEN}exists${RESET} || (dev install run "$2")
             alias: run-ch
             aliasonly: false
             description: Runner for installing software (cmd check)
@@ -587,8 +580,7 @@ commands:
             disabled: false
           run-ex:
             keypath: dev.install.run-ex
-            name: dev install exists "$1" &> /dev/null && echo -e ${GREEN}exists${RESET}
-              || (dev install run "$2")
+            name: dev install exists "$1" &> /dev/null && echo -e ${GREEN}exists${RESET} || (dev install run "$2")
             alias: run-ex
             aliasonly: false
             description: Runner for installing software (dest exists)
@@ -601,8 +593,7 @@ commands:
             disabled: false
           rust:
             keypath: dev.install.rust
-            name: dev install run-ch "rustup" 'curl --proto "=https" --tlsv1.2 -sSf
-              https://sh.rustup.rs | sh'
+            name: dev install run-ch "rustup" 'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
             alias: rust
             aliasonly: false
             description: Install Rust
@@ -615,8 +606,7 @@ commands:
             disabled: false
           starship:
             keypath: dev.install.starship
-            name: dev install run-ch "starship" 'sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-              && eval "$(starship init zsh)"'
+            name: dev install run-ch "starship" 'sh -c "$(curl -fsSL https://starship.rs/install.sh)" && eval "$(starship init zsh)"'
             alias: starship
             aliasonly: false
             description: Install starship
@@ -629,7 +619,7 @@ commands:
             disabled: false
           terminalizer:
             keypath: dev.install.terminalizer
-            name: dev install "terminalizer" "npm install -g terminalizer"
+            name: dev install run-ch "terminalizer" "npm install -g terminalizer"
             alias: terminalizer
             aliasonly: false
             description: Install terminalizer
@@ -655,7 +645,7 @@ commands:
             disabled: false
           tree:
             keypath: dev.install.tree
-            name: dev install "tree" "brew install tree"
+            name: dev install run-ch "tree" "brew install tree"
             alias: tree
             aliasonly: false
             description: Install tree
@@ -668,10 +658,10 @@ commands:
             disabled: false
           vscode:
             keypath: dev.install.vscode
-            name: dev install "tree" "brew install tree"
-            alias: tree
+            name: dev install run-ex "/Applications/Visual\ Studio\ Code.app" "brew install --cask visual-studio-code"
+            alias: vscode
             aliasonly: false
-            description: Install tree
+            description: Install vscode
             commands: {}
             subs: {}
             code:
@@ -681,8 +671,7 @@ commands:
             disabled: false
           zsh-autosuggestions:
             keypath: dev.install.zsh-autosuggestions
-            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-              "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
             alias: zsh-autosuggestions
             aliasonly: false
             description: Install zsh-autosuggestions
@@ -695,9 +684,7 @@ commands:
             disabled: false
           zsh-syntax-highlighting:
             keypath: dev.install.zsh-syntax-highlighting
-            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
-              "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-              ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+            name: dev install run-ex "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
             alias: zsh-syntax-highlighting
             aliasonly: false
             description: Install zsh-syntax-highlighting
@@ -743,8 +730,7 @@ commands:
                 disabled: false
               devsphere:
                 keypath: dev.keys.copy.devsphere
-                name: cat $RAINSPHERE_HOME/private-keys/gcp-devsphere-sa-key.json
-                  | pbcopy
+                name: cat $RAINSPHERE_HOME/private-keys/gcp-devsphere-sa-key.json | pbcopy
                 alias: devsphere
                 aliasonly: false
                 description: Copy devsphere service account key to pasteboard
