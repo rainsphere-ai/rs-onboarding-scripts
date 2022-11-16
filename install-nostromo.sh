@@ -294,7 +294,7 @@ setup_nostromo() {
 
 setup_dev() {
   fmt_info "Docking nostromo manifests..."
-  nostromo dock https://raw.githubusercontent.com/rainsphere-ai/rs-onboarding-scripts/main/dev.yaml || {
+  nostromo dock https://raw.github.com/rainsphere-ai/rs-onboarding-scripts/main/dev.yaml || {
     fmt_error "nostromo docking failed"
     exit 1
   }
