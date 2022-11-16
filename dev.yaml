@@ -72,6 +72,19 @@ commands:
               snippet: ""
             mode: 0
             disabled: false
+          git:
+            keypath: dev.edit.git
+            name: git config --global --edit
+            alias: git
+            aliasonly: false
+            description: Edit git config file
+            commands: {}
+            subs: {}
+            code:
+              language: ""
+              snippet: ""
+            mode: 0
+            disabled: false
           nostromo:
             keypath: dev.edit.nostromo
             name: vim ~/.nostromo/ships/manifest.yaml
