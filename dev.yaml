@@ -1119,7 +1119,7 @@ commands:
               [[ $SHELL == /bin/zsh ]] && echo "zsh is already default shell" || chsh -s $(which zsh) &> /dev/null && echo "zsh set as default shell";
               dev install brew;
               dev install nvm;
-              local node_version=v14;
+              local node_version=v16;
               local ruby_version=2.7.6;
               echo -ne installing node $node_version... && nvm install $node_version.18.0 &> /dev/null && echo -e ${GREEN}done${RESET} || echo -e ${RED}failed${RESET};
               nvm alias default $node_version &> /dev/null && nvm use $node_version &> /dev/null && echo "node $node_version set as default";
