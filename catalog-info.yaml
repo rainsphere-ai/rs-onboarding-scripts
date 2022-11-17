@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rs-onboarding-scripts
+  description: 'Onboarding scripts and dev env configuration'
+  tags:
+    - scripts
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: rainsphere-ai/rs-onboarding-scripts
+    github.com/team-slug: rainsphere-ai
+spec:
+  type: scripts
+  lifecycle: production
+  owner: 'platform'
