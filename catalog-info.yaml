@@ -4,7 +4,8 @@ metadata:
   name: rs-onboarding-scripts
   description: 'Onboarding scripts and dev env configuration'
   tags:
-    - scripts
+    - yaml
+    - shell
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: rainsphere-ai/rs-onboarding-scripts
