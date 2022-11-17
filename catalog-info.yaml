@@ -13,4 +13,4 @@ metadata:
 spec:
   type: scripts
   lifecycle: production
-  owner: 'platform'
+  owner: 'tools'
