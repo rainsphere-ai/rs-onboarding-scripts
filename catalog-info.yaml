@@ -7,7 +7,6 @@ metadata:
     - yaml
     - shell
   annotations:
-    backstage.io/techdocs-ref: dir:.
     github.com/project-slug: rainsphere-ai/rs-onboarding-scripts
     github.com/team-slug: rainsphere-ai
 spec:
